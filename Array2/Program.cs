@@ -1,7 +1,7 @@
 ﻿using Array2;
 
 // call stack
-//CallStack.Method1("hello");
+CallStack.Method1();
 
 // Stack
 //StackExperiments.Do();
@@ -12,19 +12,22 @@
 // List
 //ListExperiments.Do();
 
-//await (new ComplexityTests()).Queue_CleanAll();
-//await (new ComplexityTests()).Queue_AddElement();
-//await (new ComplexityTests()).Stack_CleanAll();
 //await (new ComplexityTests()).Stack_AddElement();
+//await (new ComplexityTests()).Stack_CleanAll();
+//await (new ComplexityTests()).Queue_AddElement();
+//await (new ComplexityTests()).Queue_CleanAll();
+
 
 //getHashCode
 //GetHashCodeExperiments.Do();
 
 //hashset
-HashSetExperiments.Do();
+//HashSetExperiments.Do();
+//await (new ComplexityTests()).HashSet_AddElement();
 
 //dict
-DictionaryExperiments.Do();
+//DictionaryExperiments.Do();
+//await (new ComplexityTests()).Dictionary_AddElement();
 
 Console.WriteLine("exit");
 

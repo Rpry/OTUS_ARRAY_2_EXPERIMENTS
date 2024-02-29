@@ -9,6 +9,9 @@ public class ComplexityTests
     private IEnumerable<string> middleArray;
     private IEnumerable<string> longArray;
     private string newItem = "newItem";
+    private Dictionary<string, string> shortDict;
+    private Dictionary<string, string> middleDict;
+    private Dictionary<string, string> longDict;
 
     public ComplexityTests()
     {
@@ -78,7 +81,30 @@ public class ComplexityTests
         var longStack = new Stack<string>(longArray);
         AddElementToStack(longStack, newItem);
     }
-
+    
+    public async Task HashSet_AddElement()
+    {
+        AddElementToHashSet(new HashSet<string>(), String.Empty, false);
+        
+        var shortHashSet = new HashSet<string>(shortArray);
+        AddElementToHashSet(shortHashSet, newItem);
+            
+        var middleHashSet = new HashSet<string>(middleArray);
+        AddElementToHashSet(middleHashSet, newItem);
+            
+        var longHashSet = new HashSet<string>(longArray);
+        AddElementToHashSet(longHashSet, newItem);
+    }
+    
+    public async Task Dictionary_AddElement()
+    {
+        AddElementToDict(shortDict, newItem);
+            
+        AddElementToDict(middleDict, newItem);
+            
+        AddElementToDict(longDict, newItem);
+    }
+    
     private void DequeueAll(Queue<string> queue, bool loggingEnabled = true)
     {
         RunWithStopwatch(() =>
@@ -117,6 +143,25 @@ public class ComplexityTests
         RunWithStopwatch(() =>
         {
             stack.Push(newElement);
+        },
+        loggingEnabled);
+    }
+    
+    
+    private void AddElementToDict(Dictionary<string, string> dict, string newElement, bool loggingEnabled = true)
+    {
+        RunWithStopwatch(() =>
+        {
+            dict.Add(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+        },
+        loggingEnabled);
+    }
+        
+    private void AddElementToHashSet<T>(HashSet<T> hashSet, T newElement, bool loggingEnabled = true)
+    {
+        RunWithStopwatch(() =>
+        {
+            hashSet.Add(newElement);
         },
         loggingEnabled);
     }
