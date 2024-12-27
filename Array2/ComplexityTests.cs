@@ -96,8 +96,23 @@ public class ComplexityTests
         AddElementToHashSet(longHashSet, newItem);
     }
     
+    public async Task HashSet_ContainsElement()
+    {
+        ContainsInHashSet(new HashSet<string>(), String.Empty, false);
+        
+        var shortHashSet = new HashSet<string>(shortArray);
+        ContainsInHashSet(shortHashSet, newItem);
+            
+        var middleHashSet = new HashSet<string>(middleArray);
+        ContainsInHashSet(middleHashSet, newItem);
+            
+        var longHashSet = new HashSet<string>(longArray);
+        ContainsInHashSet(longHashSet, newItem);
+    }
+
     public async Task Dictionary_AddElement()
     {
+        //var shortDict = new Dictionary<string, string>();
         AddElementToDict(shortDict, newItem);
             
         AddElementToDict(middleDict, newItem);
@@ -164,6 +179,15 @@ public class ComplexityTests
             hashSet.Add(newElement);
         },
         loggingEnabled);
+    }
+    
+    private void ContainsInHashSet<T>(HashSet<T> hashSet, T element, bool loggingEnabled = true)
+    {
+        RunWithStopwatch(() =>
+            {
+                hashSet.Contains(element);
+            },
+            loggingEnabled);
     }
     
     private void RunWithStopwatch(Action action, bool loggingEnabled)

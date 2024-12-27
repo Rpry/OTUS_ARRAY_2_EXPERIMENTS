@@ -1,7 +1,7 @@
 ﻿using Array2;
 
 // call stack
-CallStack.Method1();
+//CallStack.Method1();
 
 // Stack
 //StackExperiments.Do();
@@ -24,10 +24,11 @@ CallStack.Method1();
 //hashset
 //HashSetExperiments.Do();
 //await (new ComplexityTests()).HashSet_AddElement();
+//await (new ComplexityTests()).HashSet_ContainsElement();
 
 //dict
 //DictionaryExperiments.Do();
-//await (new ComplexityTests()).Dictionary_AddElement();
+await (new ComplexityTests()).Dictionary_AddElement();
 
 Console.WriteLine("exit");
 

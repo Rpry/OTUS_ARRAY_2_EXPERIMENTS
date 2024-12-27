@@ -10,5 +10,12 @@ public static class StackExperiments
         stack.Push("two");
         var last = stack.Pop();
         last = stack.Pop();
+
+        //stack[1]
+        /*
+        foreach (var stackValue in stack)
+        {
+        }
+        */
     }
 }

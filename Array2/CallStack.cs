@@ -2,18 +2,22 @@
 
 public static class CallStack
 {
-    public static string Method1(string s)
+    public static void Method1()
     {
-        return Method2(s);
+        //Code before
+        Method2();
+        //Code after
     }
 
-    private static string Method2(string s)
+    private static void Method2()
     {
-        return Method3(s);
+        //Code before
+        Method3();
+        //Code after
     }
     
-    private static string Method3(string s)
+    private static void Method3()
     {
-        return s;
+        //Code
     }
 }

@@ -11,11 +11,13 @@ public class Person
             if (ReferenceEquals(y, null)) return false;
             if (x.GetType() != y.GetType()) return false;
             return x.Name == y.Name;
+            //return x == y;
         }
 
         public int GetHashCode(Person obj)
         {
-            return obj.Name.GetHashCode();
+            //return obj.Name.GetHashCode();
+            return obj.GetHashCode();
         }
     }
 
